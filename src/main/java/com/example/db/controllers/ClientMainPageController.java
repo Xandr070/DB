@@ -1,12 +1,15 @@
 package com.example.db.controllers;
 
 import com.example.db.HibernateRunner;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import com.example.db.MainApp;
 import com.example.db.entities.SupplierProduct;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -46,22 +49,33 @@ public class ClientMainPageController {
 
         // Initialize columns
 
-        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        quantityColumn.setCellValueFactory(cellData -> cellData.getValue().quantityProperty().asObject());
-        priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+//        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+//        quantityColumn.setCellValueFactory(cellData -> cellData.getValue().quantityProperty().asObject());
+//        priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+        // idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        productCodeColumn.setCellValueFactory(new PropertyValueFactory<>("productCode"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         // Load data into table
         loadData();
     }
 
     private void loadData() {
-        try (Session session = sessionFactory.openSession()) {
-            Query<SupplierProduct> query = session.createQuery("from SupplierProduct", SupplierProduct.class);
-            List<SupplierProduct> productList = query.list();
-            supplierProductTable.getItems().addAll(productList);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try (Session session = sessionFactory.openSession()) {
+//            Query<SupplierProduct> query = session.createQuery("from SupplierProduct", SupplierProduct.class);
+//            List<SupplierProduct> productList = query.list();
+//            supplierProductTable.getItems().addAll(productList);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        Platform.runLater(() -> {
+            HibernateRunner.session().inTransaction(session -> {
+                Query query = session.createQuery("from SupplierProduct", SupplierProduct.class);
+                supplierProductTable.getItems().addAll(FXCollections.observableArrayList(query.getResultList()));
+            });
+        });
     }
 
     @FXML

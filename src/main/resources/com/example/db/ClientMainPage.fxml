@@ -18,10 +18,10 @@
     <!-- Таблица для отображения данных Supplier Product -->
     <TableView fx:id="supplierProductTable" prefWidth="600">
         <columns>
-            <TableColumn fx:id="productCodeColumn" text="Product Code" />
-            <TableColumn fx:id="nameColumn" text="Name" />
-            <TableColumn fx:id="quantityColumn" text="Quantity" />
-            <TableColumn fx:id="priceColumn" text="Price" />
+            <TableColumn fx:id="productCodeColumn" text="Код товара" />
+            <TableColumn fx:id="nameColumn" text="Название" />
+            <TableColumn fx:id="quantityColumn" text="Количество" />
+            <TableColumn fx:id="priceColumn" text="Цена" />
         </columns>
     </TableView>
 </VBox>

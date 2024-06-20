@@ -47,6 +47,7 @@ public class MainApp extends Application {
         primaryStage.show();
     }
 
+
     public void showClientLoginForm() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/db/ClientLogin.fxml"));
         Parent root = loader.load();

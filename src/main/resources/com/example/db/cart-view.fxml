@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" spacing="20" style="-fx-background-color: #f4f6f9; -fx-padding: 20;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.db.controllers.CartController">
+    <HBox alignment="BASELINE_CENTER" spacing="10">
+        <Label style="-fx-font-size: 20px; -fx-text-fill: #2a58ae;" text="Корзина" />
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="20">
+        <!-- Список товаров в корзине -->
+        <ListView fx:id="cartListView" style="-fx-pref-width: 300; -fx-pref-height: 200;" />
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="20">
+        <Button onAction="#handleMainPage" style="-fx-background-color: linear-gradient(to bottom, #4A90E2, #2A58AE); -fx-text-fill: white; -fx-font-size: 14pt; -fx-pref-width: 150; -fx-pref-height: 40; -fx-background-radius: 5;" text="Главная" />
+        <Button onAction="#handleOrders" style="-fx-background-color: linear-gradient(to bottom, #4A90E2, #2A58AE); -fx-text-fill: white; -fx-font-size: 14pt; -fx-pref-width: 150; -fx-pref-height: 40; -fx-background-radius: 5;" text="Заказы" />
+    </HBox>
+</VBox>

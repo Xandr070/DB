@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.db.controllers.EmployeeMainPageController">
+    <HBox minHeight="100" alignment="CENTER" spacing="20">
+        <Button onAction="#handleTransport" style="-fx-background-color: linear-gradient(to bottom, #4A90E2, #2A58AE); -fx-text-fill: white; -fx-font-size: 14pt; -fx-pref-width: 150; -fx-pref-height: 40; -fx-background-radius: 5;" text="Выдача" />
+        <Button onAction="#handleIssue" style="-fx-background-color: linear-gradient(to bottom, #4A90E2, #2A58AE); -fx-text-fill: white; -fx-font-size: 14pt; -fx-pref-width: 150; -fx-pref-height: 40; -fx-background-radius: 5;" text="Перевозка" />
+        <Button onAction="#handleLogout" style="-fx-background-color: #FF4B4B; -fx-text-fill: white; -fx-font-size: 14pt; -fx-pref-width: 150; -fx-pref-height: 40; -fx-background-radius: 5;" text="Выйти" />
+    </HBox>
+</VBox>

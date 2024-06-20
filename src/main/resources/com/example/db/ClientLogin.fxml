@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2"
+            fx:controller="com.example.db.controllers.ClientLoginController" prefHeight="400" prefWidth="600"
+            style="-fx-background-color: white;">
+    <top>
+        <Button text="Назад" onAction="#handleBackButton"/>
+    </top>
+    <center>
+        <HBox spacing="20" alignment="CENTER" style="-fx-padding: 20;">
+            <!-- Блок регистрации -->
+            <VBox alignment="CENTER" spacing="10"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-border-color: #4A90E2; -fx-border-radius: 10; -fx-border-width: 2;">
+                <Label text="Регистрация" style="-fx-text-fill: #2A58AE; -fx-font-size: 18pt;"/>
+                <TextField fx:id="registerEmailField" promptText="Email"
+                           style="-fx-pref-width: 200; -fx-pref-height: 30;"/>
+                <PasswordField fx:id="registerPasswordField" promptText="Пароль"
+                               style="-fx-pref-width: 200; -fx-pref-height: 30;"/>
+                <TextField fx:id="registerFirstNameField" promptText="Имя"
+                           style="-fx-pref-width: 200; -fx-pref-height: 30;"/>
+                <TextField fx:id="registerLastNameField" promptText="Фамилия"
+                           style="-fx-pref-width: 200; -fx-pref-height: 30;"/>
+                <TextField fx:id="registerPhoneNumberField" promptText="Номер телефона"
+                           style="-fx-pref-width: 200; -fx-pref-height: 30;"/>
+                <Button text="Регистрация" onAction="#handleRegister"
+                        style="-fx-background-color: linear-gradient(to bottom, #4A90E2, #2A58AE); -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 30;"/>
+            </VBox>
+
+            <!-- Блок авторизации -->
+            <VBox alignment="CENTER" spacing="10"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-border-color: #4A90E2; -fx-border-radius: 10; -fx-border-width: 2;">
+                <Label text="Вход" style="-fx-text-fill: #2A58AE; -fx-font-size: 18pt;"/>
+                <TextField fx:id="loginEmailField" promptText="Email"
+                           style="-fx-pref-width: 200; -fx-pref-height: 30;"/>
+                <PasswordField fx:id="loginPasswordField" promptText="Пароль"
+                               style="-fx-pref-width: 200; -fx-pref-height: 30;"/>
+                <Button text="Войти" onAction="#handleLogin"
+                        style="-fx-background-color: linear-gradient(to bottom, #4A90E2, #2A58AE); -fx-text-fill: white; -fx-pref-width: 200; -fx-pref-height: 30;"/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

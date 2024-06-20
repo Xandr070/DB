@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="300" prefWidth="400" spacing="20"
+      style="-fx-background-color: white; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.db.controllers.RoleSelectionController">
+
+    <!-- Заголовок -->
+    <Label text="Система ПВЗ" style="-fx-text-fill: #2A58AE; -fx-font-size: 24pt; -fx-font-weight: bold;" />
+
+    <!-- Подзаголовок -->
+    <Label text="Выберите вашу роль, чтобы войти в аккаунт" style="-fx-text-fill: #4A90E2; -fx-font-size: 14pt;" />
+
+    <!-- Кнопки выбора роли -->
+    <BorderPane style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+        <center>
+            <VBox alignment="CENTER" spacing="20">
+
+                <!-- Кнопка для сотрудника -->
+                <Button onAction="#handleEmployeeSelected"
+                        style="-fx-background-color: linear-gradient(to bottom, #4A90E2, #2A58AE); -fx-text-fill: white; -fx-font-size: 14pt; -fx-pref-width: 250; -fx-pref-height: 40; -fx-background-radius: 10;"
+                        text="Сотрудник" />
+
+                <!-- Кнопка для клиента -->
+                <Button onAction="#handleClientSelected"
+                        style="-fx-background-color: linear-gradient(to bottom, #4A90E2, #2A58AE); -fx-text-fill: white; -fx-font-size: 14pt; -fx-pref-width: 250; -fx-pref-height: 40; -fx-background-radius: 10;"
+                        text="Клиент" />
+            </VBox>
+        </center>
+    </BorderPane>
+</VBox>

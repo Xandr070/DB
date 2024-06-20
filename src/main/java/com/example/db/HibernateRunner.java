@@ -21,11 +21,11 @@ public class HibernateRunner {
                 .addAnnotatedClass(ShipmentId.class)
                 .addAnnotatedClass(CartId.class)
 
-                .setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:1234/test")
+                .setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5431/sasaDB")
                 .setProperty("hibernate.connection.username", "postgres")
-                .setProperty("hibernate.connection.password", "postgres")
+                .setProperty("hibernate.connection.password", "sef123")
                 .setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect")
-                .setProperty("hibernate.hbm2ddl.auto", "update")
+                //.setProperty("hibernate.hbm2ddl.auto", "update")
                 .buildSessionFactory();
     }
 }

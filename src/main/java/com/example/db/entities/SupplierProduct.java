@@ -31,10 +31,10 @@ public class SupplierProduct {
     private String name;
 
     // JavaFX properties (for UI binding, not persisted in DB)
-    private transient StringProperty nameProperty;
-    private transient IntegerProperty quantityProperty;
-    private transient DoubleProperty priceProperty;
-    private transient DoubleProperty productCodeProperty;
+//    private transient StringProperty nameProperty;
+//    private transient IntegerProperty quantityProperty;
+//    private transient DoubleProperty priceProperty;
+//    private transient DoubleProperty productCodeProperty;
 
     // Constructor
     public SupplierProduct() {
@@ -45,6 +45,8 @@ public class SupplierProduct {
     }
 
     // Getters and Setters for Hibernate fields
+
+
     public int getProductCode() {
         return productCode;
     }
@@ -122,5 +124,14 @@ public class SupplierProduct {
         this.priceProperty.set(price);
     }
 
-
+    @Override
+    public String toString() {
+        return "SupplierProduct{" +
+                "productCode=" + productCode +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", weight=" + weight +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
